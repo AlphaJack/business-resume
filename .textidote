@@ -1,0 +1,6 @@
+--ci
+--check en_US
+--firstlang it
+--ignore sh:nobreak
+--remove-macros multilinecomment
+--output html
