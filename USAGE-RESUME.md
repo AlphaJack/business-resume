@@ -47,7 +47,7 @@ To set a custom font:
 In your document body, define the header content:
 
 ```latex
-// image in JPEG, PNG or PDF format, without extension
+% image in JPEG, PNG or PDF format, without extension
 \avatar{photo}
 \name{Firstname Lastname}
 \city{Milan, Italy}
@@ -93,7 +93,6 @@ Divide your resume in sections:
 Add entries to any section:
 
 ```latex
-% 
 \entry
  {Company/Institution}
  {Job Title/Degree}
