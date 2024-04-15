@@ -15,8 +15,6 @@ end: clean success
 # single files
 resume-pdf:
 	$(engine) $(flags) "resume.tex" | texlogfilter
-	# uncomment if the "linked" option is set
-	#$(engine) $(flags) "resume.tex" | texlogfilter
 
 letter-pdf:
 	$(engine) $(flags) "letter.tex" | texlogfilter
