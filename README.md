@@ -11,49 +11,59 @@
 // └───────────────────────────────────────────────────────────────
 -->
 
-# Business Class
+# Business Résumé
 
-A boring LaTeX template for your résumé and cover letter
+A simple and easy to use [Typst](https://typst.app/) template for your résumé and cover letter
 
 ## Screenshots
 
-See the [example](/example/) folder for PDFs generated with this class.
+See the [example](./example/) folder for PDFs generated with this template.
 
-<p align="middle">
-  <img align="top" src="/example/resume-image.avif" width="28%"/>
-  <img align="top" src="/example/resume.avif" width="28%"/>
-  <img align="top" src="/example/letter.avif" width="28%"/>
+<p style="text-align: center;">
+  <img style="vertical-align: top;" src="/example/resume-image.avif" width="28%"/>
+  <img style="vertical-align: top;" src="/example/resume.avif" width="28%"/>
+  <img style="vertical-align: top;"c src="/example/letter.avif" width="28%"/>
 </p>
 
 ## Requirements
 
-To use this LaTeX template, you need:
-
-- A recent LaTeX distribution to load the required packages, such as TeXLive 2023 or MiKTeX 
-- A LaTeX editor to edit and generate PDFs documents
-- In alternative, a text editor of your choice and [make](https://www.gnu.org/software/make/manual/make.html) will do the trick
-- [TeXtidote](https://sylvainhalle.github.io/textidote/) for spellchecking (optional)
-
+You just need to install [Typst](https://typst.app/) and then you are ready to go.
 
 ## Usage
 
-Customize the files "resume.tex" and "letter.tex", then generate the the output PDFs with your LaTeX editor.
+The template, résumé and cover letter are plain text files, so you can use your favorite text editor to modify them.
 
-If you are using `make`, you can run the following commands:
+To generate the PDF files, open a terminal in the current directory and run `typst compile FILE.typ`.
 
-```bash
- # business.cls + resume.tex -> resume.pdf
-make resume
+You can also run `typst watch FILE.typ` to re-generate the PDF at every change.
 
- # business.cls + letter.tex -> letter.pdf
-make letter
+### Résumé
 
- # resume.tex -> spellcheck-resume.html
- # letter.tex -> spellcheck-letter.html
-make spellcheck
-```
+Open the [resume.typ](./resume.typ) file and edit the `#header` with your information.
+You can omit some entries if you don't want to show them.
+If you don't want the image to appear, set `small: false` in the header.
 
-For detailed résumé options, see [USAGE-RESUME.md](USAGE-RESUME.md).
+You can separate different sections with two equal signs: `== Education`.
 
-For detailed cover letter options, see [USAGE-LETTER.md](USAGE-LETTER.md).
+Inside each section, add some `#entry` specifying:
+
+1. organization, 
+2. title,
+3. location,
+4. begin date,
+5. end date,
+6. list of achievements
+
+### Cover letter
+
+Open the [resume.typ](./resume.typ) file and copy the same `#header` from your résumé.
+Set `small: false` to not make the image appear.
+
+Write the letter separating paragraphs with empty lines between them.
+
+Close the letter with your name and optionally a signature image.
+
+### Template
+
+Refer to the [Typst Documentation](https://typst.app/docs/) to customize the template file [business.typ](./business.typ).
 

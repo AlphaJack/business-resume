@@ -1,62 +1,41 @@
-% ┌───────────────────────────────────────────────────────────────┐
-% │ Contents of letter.tex                                        │
-% ├───────────────────────────────────────────────────────────────┘
-% │
-% ├── PREAMBLE
-% ├──┐BODY
-% │  ├── HEADER
-% │  ├── SALUTATION
-% │  ├── OPENING
-% │  ├── QUALIFICATIONS
-% │  ├── CLOSING
-% │  └── SIGN-OFF
-% │
-% └───────────────────────────────────────────────────────────────
+#import "business.typ": *
+#show: business_template
 
-% ################################################################ PREAMBLE
+#set list(spacing: 1.3em)
 
-\author{Erica Ruggiero}
-\title{Erica Ruggiero Cover Letter}
+#header(
+  small: true,
+  name: "Erica Ruggiero",
+  avatar: "photo.jpg",
+  mobile: "(413) 464-4238",
+  location: "Cambridge, MA 01242",
+  email: "Erica.Ruggiero@sloan.mit.edu",
+  website: "https://linkedin.com/in/erikaruggiero",
+)
 
-\documentclass[a4paper,11pt,letter]{business}
+#v(10mm)
 
-%\setmainfont{Minion 3}
+#let today = datetime.today()
+#today.display("[month repr:long] [day], [year]")
 
-% ################################################################ BODY
+#v(5mm)
 
-\begin{document}
-
-% ################################ HEADER
-
-\avatar{photo}
-\name{Erica Ruggiero}
-\city{Cambridge, MA 01242}
-\mobile{(413) 464-4238}
-\mail{Erica.Ruggiero@sloan.mit.edu}
-\website{https://linkedin.com/in/erikaruggiero}
-
-\thispagestyle{text}
-
-% ################################ SALUTATION
-
-\vspace{\dimexpr 10mm-\baselineskip\relax}
-
-Mr. Tim Apple\\
-University Relations\\
-Apple\\
-1 Infinite Loop\\
+Mr. Tim Apple\
+University Relations\
+Apple\
+1 Infinite Loop\
 Cupertino, CA 95014
 
 Dear Mr. Apple,
 
-% ################################ OPENING
+#v(5mm)
+
+Dear Hiring Team,
 
 I am excited to be applying for a Product Marketing Internship position with Apple.
 I had the pleasure of attending the Apple information session at Sloan and was struck by the passion and drive exhibited by all the presenters.
 Product Marketing in particular stood out to me because it blends core business principles with a passion for technology and the product.
 I believe my technical, communication, and teamwork skills would make me a valuable addition to Apple.
-
-% ################################ QUALIFICATIONS
 
 As a design engineer at Intel, I worked on products for our server and data center businesses.
 I was constantly engaged on projects with extensive deliverables and short deadlines.
@@ -73,18 +52,13 @@ I achieved this by first modifying the code generation process to be more modula
 I then demonstrated to each team the benefits in terms of engineering hours and scalability that the central database afforded them.
 Once I had teams on board, I engaged in significant cross-team communication, prioritizing code change requests from different internal customers and presenting to wide audiences, including project leadership, about the use-model and content of the database.
 
-% ################################ CLOSING
-
 With my strong technical and analytical background, as well as the teamwork, communication and business skills I am developing at Sloan, I know that I can bring a strong, unique perspective to the Apple Product Marketing team.
 Thank you for your consideration for this position and I look forward to discussing my experience further in a personal interview.
 
-% ################################ SIGN-OFF
-
 Sincerely,
 
-%\adjustimage{width=40mm}{signature}
+#v(5mm)
+
+#image("signature.svg", width: 40mm)
 
 Erica Ruggiero
-
-\end{document}
-
