@@ -5,38 +5,53 @@
 
 #header(
   small: true,
-  name: "Jordan Rivera",
-  mobile: "+1 555 0100",
-  location: "Springfield, OR 97477",
-  email: "jordan.rivera@example.com",
+  name: "Erica Ruggiero",
+  avatar: image("photo.jpg"),
+  mobile: "(413) 464-4238",
+  location: "Cambridge, MA 01242",
+  email: "Erica.Ruggiero@sloan.mit.edu",
+  website: "https://linkedin.com/in/erikaruggiero",
 )
 
 #v(10mm)
 
-#datetime.today().display("[month repr:long] [day], [year]")
+#let today = datetime.today()
+#today.display("[month repr:long] [day], [year]")
 
 #v(5mm)
 
-Ms. Avery Chen\
-Head of Operations\
-Riverbend Logistics\
-100 Harbor Street\
-Portland, OR 97201
+Mr. Tim Apple\
+University Relations\
+Apple\
+1 Infinite Loop\
+Cupertino, CA 95014
 
 #v(5mm)
 
-Dear Ms. Chen,
+Dear Mr. Apple,
 
-I am writing to apply for the Operations Strategy Manager position at Riverbend Logistics.
-Your plan to automate the Portland distribution center is the kind of project I have worked on for the last six years, first on the factory floor and then on the product side.
+I am excited to be applying for a Product Marketing Internship position with Apple.
+I had the pleasure of attending the Apple information session at Sloan and was struck by the passion and drive exhibited by all the presenters.
+Product Marketing in particular stood out to me because it blends core business principles with a passion for technology and the product.
+I believe my technical, communication, and teamwork skills would make me a valuable addition to Apple.
 
-At Halden Robotics, I manage a warehouse picking robot used at 40 customer sites.
-I work daily with operations teams like yours to understand where automation helps and where it gets in the way, and I redesigned our setup process so that new sites go live in half the time.
+As a design engineer at Intel, I worked on products for our server and data center businesses.
+I was constantly engaged on projects with extensive deliverables and short deadlines.
+One such project was leading the development of a test chip commissioned by Intel researchers.
+The test chip had a set of broad specifications that I had to translate first into specific design goals and then into physical circuitry.
+Once I had a design in place, I coordinated with internal stakeholders to iterate on the design as the experiment for the chip evolved.
+I set up a series of milestones to ensure that my schedule would be met, and assembled a team of engineers to assist me in the project.
+I concurrently owned several technical aspects of the project, while also managing the overall project and keeping close communications with the internal customers who would ultimately be using the chip.
+Despite some significant setbacks late in the project, we managed to deliver the chip ahead of schedule.
 
-Before that, as a process engineer at Brightwater Manufacturing, I increased the throughput of an assembly line by 18% without buying new equipment, and halved scrap rates by introducing statistical process control.
+Towards the end of my time at Intel, I assumed ownership over a large code database which was used by engineers from three different functional roles and across three different Intel projects, all of whom were invested in different aspects of the database.
+Part of this role was convincing each project team to use the central database, rather than branching off and creating their own version.
+I achieved this by first modifying the code generation process to be more modular and adaptable to different project specifications.
+I then demonstrated to each team the benefits in terms of engineering hours and scalability that the central database afforded them.
+Once I had teams on board, I engaged in significant cross-team communication, prioritizing code change requests from different internal customers and presenting to wide audiences, including project leadership, about the use-model and content of the database.
 
-I would welcome the chance to discuss how this experience could help Riverbend.
-Thank you for your time and consideration.
+With my strong technical and analytical background, as well as the teamwork, communication and business skills I am developing at Sloan, I know that I can bring a strong, unique perspective to the Apple Product Marketing team.
+Thank you for your consideration for this position and I look forward to discussing my experience further in a personal interview.
 
 Sincerely,
 
@@ -44,4 +59,4 @@ Sincerely,
 
 #image("signature.svg", width: 40mm)
 
-Jordan Rivera
+Erica Ruggiero

@@ -3,8 +3,9 @@
 A simple [Typst](https://typst.app/) template for your résumé and cover letter, with a matching header, photo and signature.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/AlphaJack/business-resume/master/example/resume.avif" width="45%"/>
-  <img src="https://raw.githubusercontent.com/AlphaJack/business-resume/master/example/letter.avif" width="45%"/>
+  <img src="https://raw.githubusercontent.com/AlphaJack/business-resume/master/example/resume-image.avif" width="30%"/>
+  <img src="https://raw.githubusercontent.com/AlphaJack/business-resume/master/example/resume.avif" width="30%"/>
+  <img src="https://raw.githubusercontent.com/AlphaJack/business-resume/master/example/letter.avif" width="30%"/>
 </p>
 
 See the [example](https://github.com/AlphaJack/business-resume/tree/master/example) folder for the PDFs.
@@ -19,7 +20,7 @@ cd my-resume
 typst watch resume.typ
 ```
 
-The project contains `resume.typ`, `letter.typ`, a placeholder `avatar.svg` and a placeholder `signature.svg`: replace them with your own information, photo and signature.
+The project contains `resume.typ`, `letter.typ`, a sample `photo.jpg` and a sample `signature.svg`: replace them with your own information, photo and signature.
 
 To use the template in an existing project, import it at the top of your file:
 
@@ -32,12 +33,12 @@ To use the template in an existing project, import it at the top of your file:
 
 ```typ
 #header(
-  name: "Jordan Rivera",
+  name: "Erica Ruggiero",
   avatar: image("photo.jpg"),
-  mobile: "+1 555 0100",
-  location: "Springfield, OR 97477",
-  email: "jordan.rivera@example.com",
-  website: "https://example.com/jordan-rivera",
+  mobile: "(413) 464-4238",
+  location: "Cambridge, MA 01242",
+  email: "Erica.Ruggiero@sloan.mit.edu",
+  website: "https://linkedin.com/in/erikaruggiero",
 )
 ```
 
@@ -51,14 +52,14 @@ Separate sections with headings, such as `== Education`, and add an `#entry` for
 
 ```typ
 #entry(
-  "Halden Robotics",  // organization
-  "Product Manager",  // role
-  "Portland, OR",     // location
-  "2024",             // begin date
-  "Present",          // end date
+  "Intel Corporation",           // organization
+  "Physical Design Intern",      // role
+  "Hudson, MA",                  // location
+  "2010",                        // begin date
+  "2011",                        // end date
   [
-    - Own the roadmap of a warehouse picking robot used at 40 customer sites
-    - Run quarterly pricing reviews with sales and finance
+    - Modeled timing and power consumption for chip critical paths
+    - Developed chip power plan after pooling input from cross-site team members
   ],
 )
 ```
