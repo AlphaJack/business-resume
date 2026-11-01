@@ -43,7 +43,7 @@
 
 #let header(
   small: false,
-  name: "John Doe",
+  name: "Jane Doe",
   location: "",
   mobile: "",
   email: "",
@@ -52,7 +52,8 @@
   avatar: none,
   avatarSize: 25mm,
 ) = {
-  if small [
+  // without a photo, use the compact header of the cover letter
+  if small or avatar == none [
     #align(center, [#text(size: 20pt)[#name] #v(-15pt)])
     #grid(
       columns: (1fr, 1fr, 1fr),
