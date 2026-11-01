@@ -1,13 +1,26 @@
-#let business_template(doc) = {
+#let business_template(
+  doc,
+  // PDF metadata
+  author: none,
+  title: none,
+  paper: "a4",
+  // Libertinus Serif ships with Typst, so the template works without Minion 3
+  font: ("Minion 3", "Libertinus Serif"),
+  size: 11pt,
+) = {
+  set document(
+    author: if author == none { () } else { author },
+    title: title,
+  )
+
   set page(
-    paper: "a4",
+    paper: paper,
     margin: (x: 18mm, y: 10mm),
   )
 
   set text(
-    // Libertinus Serif ships with Typst, so the template works without Minion 3
-    font: ("Minion 3", "Libertinus Serif"),
-    size: 11pt,
+    font: font,
+    size: size,
   )
 
   set heading(numbering: none)
@@ -16,7 +29,7 @@
 
   show heading: smallcaps
   show heading: this => [
-    #set text(weight: "regular", size: 14pt)
+    #set text(weight: "regular", size: size + 3pt)
     #smallcaps(this.body)
     #v(-4mm)
     #line(length: 100%)

@@ -1,5 +1,8 @@
 #import "@preview/business-resume:2.1.0": *
-#show: business_template
+#show: business_template.with(
+  author: "Erica Ruggiero",
+  title: "Erica Ruggiero Cover letter",
+)
 
 #set list(spacing: 1.3em)
 

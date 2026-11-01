@@ -26,8 +26,16 @@ To use the template in an existing project, import it at the top of your file:
 
 ```typ
 #import "@preview/business-resume:2.1.0": *
-#show: business_template
+#show: business_template.with(
+  author: "Erica Ruggiero",           // PDF metadata
+  title: "Erica Ruggiero Résumé",     // PDF metadata
+  paper: "a4",                        // default
+  font: ("Minion 3", "Libertinus Serif"), // default
+  size: 11pt,                         // default
+)
 ```
+
+All arguments are optional.
 
 ### Header
 
@@ -72,7 +80,8 @@ Close it with your name and optionally a signature: `#image("signature.svg", wid
 
 ### Fonts
 
-The template uses Minion 3 when it is installed, and falls back to Libertinus Serif, which ships with Typst.
+By default, the template uses Minion 3 when it is installed, and falls back to Libertinus Serif, which ships with Typst.
+Pick another font with the `font` argument of `business_template`.
 
 ## Development
 
