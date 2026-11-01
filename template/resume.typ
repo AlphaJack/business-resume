@@ -24,8 +24,6 @@
   website: "https://linkedin.com/in/janedoe",
 )
 
-#v(-5mm)
-
 == Education
 
 #entry(

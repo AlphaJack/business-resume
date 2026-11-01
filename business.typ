@@ -67,34 +67,34 @@
         #if location != "" [#location \ ]
       ],
     )
-  ] else [
-    #place(
-      top + center,
-      align(center, [#text(size: 20pt)[#name]]),
-    )
-    #grid(
-      columns: (1fr, avatarSize),
-      align(left)[
-        #if location != "" [#location \ ]
-        #if mobile != "" [#link("tel:" + mobile) \ ]
-        #if email != "" [#link("mailto:" + email) \ ]
-        #if website != "" [#link(website) \ ]
-      ],
-      align(right)[
-        #if avatar != none [
-          #box(
-            clip: true,
-            radius: avatarSize / 2,
-            width: avatarSize,
-            height: avatarSize,
-          )[
-            #set image(width: avatarSize, height: avatarSize, fit: "cover")
-            #avatar
-          ]
-        ]
-      ],
-    )
-  ]
+  ] else {
+    // the name comes first in the text, so résumé parsers read it before the contacts;
+    // the photo is placed beside it, as images do not affect the reading order
+    let photo = box(
+      clip: true,
+      radius: avatarSize / 2,
+      width: avatarSize,
+      height: avatarSize,
+    )[
+      #set image(width: avatarSize, height: avatarSize, fit: "cover")
+      #avatar
+    ]
+    let details = [
+      #align(center, text(size: 20pt)[#name])
+      #v(-8pt)
+      #if location != "" [#location \ ]
+      #if mobile != "" [#link("tel:" + mobile) \ ]
+      #if email != "" [#link("mailto:" + email) \ ]
+      #if website != "" [#link(website) \ ]
+    ]
+    context {
+      let height = calc.max(measure(details).height, avatarSize)
+      block(width: 100%, height: height, {
+        place(top + right, photo)
+        details
+      })
+    }
+  }
 }
 
 
