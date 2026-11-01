@@ -91,7 +91,5 @@
   text(weight: "bold")[#organization #h(1fr) #location \ ]
   text(style: "italic")[#role #h(1fr) #dateBegin -- #dateEnd \ ]
   v(-2mm)
-  par[
-    #achievements
-  ]
+  block(achievements)
 }
