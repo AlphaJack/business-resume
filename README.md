@@ -45,6 +45,7 @@ To use the template in an existing project, import it at the top of your file:
 Every field is optional.
 Set `small: true` for a compact header without photo and website, as used in the cover letter.
 Change the photo size with `avatarSize: 30mm`.
+Without a photo, also remove the `#v(-5mm)` after the header in `resume.typ`, which only makes up for the photo's height.
 
 ### Résumé entries
 
