@@ -5,7 +5,8 @@
   )
 
   set text(
-    font: "Minion 3",
+    // Libertinus Serif ships with Typst, so the template works without Minion 3
+    font: ("Minion 3", "Libertinus Serif"),
     size: 11pt,
   )
 
@@ -34,7 +35,8 @@
   mobile: "",
   email: "",
   website: "",
-  avatar: "",
+  // an image, e.g. `image("photo.jpg")`, or none
+  avatar: none,
   avatarSize: 25mm,
 ) = {
   if small [
@@ -65,14 +67,16 @@
         #if website != "" [#link(website) \ ]
       ],
       align(right)[
-        #if avatar != "" [
+        #if avatar != none [
           #box(
             clip: true,
             radius: avatarSize / 2,
             width: avatarSize,
             height: avatarSize,
-            image(avatar, width: avatarSize, height: avatarSize),
-          )
+          )[
+            #set image(width: avatarSize, height: avatarSize, fit: "cover")
+            #avatar
+          ]
         ]
       ],
     )
