@@ -10,9 +10,23 @@ A simple [Typst](https://typst.app/) template for your résumé and cover letter
 
 See the [example](https://github.com/AlphaJack/business-resume/tree/master/example) folder for the PDFs.
 
+## Installation
+
+The template is not on [Typst Universe](https://typst.app/universe) yet, so install it as a local package by cloning this repository into Typst's data directory.
+Typst looks there before downloading packages, so the `@preview/business-resume:2.1.0` imports below work without any change:
+
+```bash
+# Linux; on macOS use ~/Library/Application\ Support, on Windows %APPDATA%
+git clone https://github.com/AlphaJack/business-resume ~/.local/share/typst/packages/preview/business-resume/2.1.0
+```
+
+The folder name must match the `version` in [typst.toml](./typst.toml).
+To update, run `git pull` in that folder, and rename it when the version changes.
+Once the template is published on Universe, delete the folder to use the published version instead.
+
 ## Usage
 
-Create a new project from the template, either on [typst.app](https://typst.app/universe/package/business-resume) or locally:
+Create a new project from the template:
 
 ```bash
 typst init @preview/business-resume:2.1.0 my-resume
@@ -27,11 +41,11 @@ To use the template in an existing project, import it at the top of your file:
 ```typ
 #import "@preview/business-resume:2.1.0": *
 #show: business_template.with(
-  author: "Jane Doe",           // PDF metadata
-  title: "Jane Doe Résumé",     // PDF metadata
-  paper: "a4",                        // default
+  author: "Jane Doe",                     // PDF metadata
+  title: "Jane Doe Résumé",               // PDF metadata
+  paper: "a4",                            // default
   font: ("Minion 3", "Libertinus Serif"), // default
-  size: 11pt,                         // default
+  size: 11pt,                             // default
 )
 ```
 
@@ -85,7 +99,7 @@ Pick another font with the `font` argument of `business_template`.
 
 ## Development
 
-To compile the template files from this repository before a release, point Typst to a local package directory:
+To compile the template files from a checkout without installing it, point Typst to a temporary package directory:
 
 ```bash
 mkdir -p /tmp/packages/preview/business-resume
