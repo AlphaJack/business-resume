@@ -1,0 +1,17 @@
+[package]
+name = "business-resume"
+version = "2.1.0"
+entrypoint = "business.typ"
+authors = ["AlphaJack <https://github.com/AlphaJack>"]
+license = "MIT AND MIT-0"
+description = "Simple résumé and cover letter with a matching header, photo and signature."
+repository = "https://github.com/AlphaJack/business-resume"
+keywords = ["resume", "cv", "cover letter", "business"]
+categories = ["cv"]
+compiler = "0.12.0"
+exclude = ["example", "thumbnail.png"]
+
+[template]
+path = "template"
+entrypoint = "resume.typ"
+thumbnail = "thumbnail.png"

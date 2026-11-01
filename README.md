@@ -1,69 +1,88 @@
-<!--
-// ┌───────────────────────────────────────────────────────────────┐
-// │ Contents of README.md                                         │
-// ├───────────────────────────────────────────────────────────────┘
-// │
-// ├──┐Business Class
-// │  ├── Screenshots
-// │  ├── Requirements
-// │  └── Usage
-// │
-// └───────────────────────────────────────────────────────────────
--->
-
 # Business Résumé
 
-A simple and easy to use [Typst](https://typst.app/) template for your résumé and cover letter
+A simple [Typst](https://typst.app/) template for your résumé and cover letter, with a matching header, photo and signature.
 
-## Screenshots
-
-See the [example](./example/) folder for PDFs generated with this template.
-
-<p style="text-align: center;">
-  <img style="vertical-align: top;" src="/example/resume-image.avif" width="28%"/>
-  <img style="vertical-align: top;" src="/example/resume.avif" width="28%"/>
-  <img style="vertical-align: top;" src="/example/letter.avif" width="28%"/>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/AlphaJack/business-resume/master/example/resume.avif" width="45%"/>
+  <img src="https://raw.githubusercontent.com/AlphaJack/business-resume/master/example/letter.avif" width="45%"/>
 </p>
 
-## Requirements
-
-You just need to install [Typst](https://typst.app/) and then you are ready to go.
+See the [example](https://github.com/AlphaJack/business-resume/tree/master/example) folder for the PDFs.
 
 ## Usage
 
-The template, résumé and cover letter are plain text files, so you can use your favorite text editor to modify them.
+Create a new project from the template, either on [typst.app](https://typst.app/universe/package/business-resume) or locally:
 
-To generate the PDF files, open a terminal in the current directory and run `typst compile FILE.typ`.
+```bash
+typst init @preview/business-resume:2.1.0 my-resume
+cd my-resume
+typst watch resume.typ
+```
 
-You can also run `typst watch FILE.typ` to re-generate the PDF at every change.
+The project contains `resume.typ`, `letter.typ`, a placeholder `avatar.svg` and a placeholder `signature.svg`: replace them with your own information, photo and signature.
 
-### Résumé
+To use the template in an existing project, import it at the top of your file:
 
-Open the [resume.typ](./resume.typ) file and edit the `#header` with your information.
-You can omit some entries if you don't want to show them.
-If you don't want the image to appear, set `small: false` in the header.
+```typ
+#import "@preview/business-resume:2.1.0": *
+#show: business_template
+```
 
-You can separate different sections with two equal signs: `== Education`.
+### Header
 
-Inside each section, add some `#entry` specifying:
+```typ
+#header(
+  name: "Jordan Rivera",
+  avatar: image("photo.jpg"),
+  mobile: "+1 555 0100",
+  location: "Springfield, OR 97477",
+  email: "jordan.rivera@example.com",
+  website: "https://example.com/jordan-rivera",
+)
+```
 
-1. organization, 
-2. title,
-3. location,
-4. begin date,
-5. end date,
-6. list of achievements
+Every field is optional.
+Set `small: true` for a compact header without photo and website, as used in the cover letter.
+Change the photo size with `avatarSize: 30mm`.
+
+### Résumé entries
+
+Separate sections with headings, such as `== Education`, and add an `#entry` for each position:
+
+```typ
+#entry(
+  "Halden Robotics",  // organization
+  "Product Manager",  // role
+  "Portland, OR",     // location
+  "2024",             // begin date
+  "Present",          // end date
+  [
+    - Own the roadmap of a warehouse picking robot used at 40 customer sites
+    - Run quarterly pricing reviews with sales and finance
+  ],
+)
+```
 
 ### Cover letter
 
-Open the [resume.typ](./resume.typ) file and copy the same `#header` from your résumé.
-Set `small: false` to not make the image appear.
+Copy the `#header` from your résumé, set `small: true`, then write the letter with empty lines between paragraphs.
+Close it with your name and optionally a signature: `#image("signature.svg", width: 40mm)`.
 
-Write the letter separating paragraphs with empty lines between them.
+### Fonts
 
-Close the letter with your name and optionally a signature image.
+The template uses Minion 3 when it is installed, and falls back to Libertinus Serif, which ships with Typst.
 
-### Template
+## Development
 
-Refer to the [Typst Documentation](https://typst.app/docs/) to customize the template file [business.typ](./business.typ).
+To compile the template files from this repository before a release, point Typst to a local package directory:
 
+```bash
+mkdir -p /tmp/packages/preview/business-resume
+ln -s "$PWD" /tmp/packages/preview/business-resume/2.1.0
+typst compile --package-path /tmp/packages template/resume.typ
+```
+
+## License
+
+The files in the `template` folder, which are copied into your project, are licensed under [MIT-0](./LICENSE-MIT-0): you can use and share your résumé without attribution.
+Everything else is licensed under [MIT](./LICENSE).
