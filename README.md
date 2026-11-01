@@ -22,7 +22,7 @@ See the [example](./example/) folder for PDFs generated with this template.
 <p style="text-align: center;">
   <img style="vertical-align: top;" src="/example/resume-image.avif" width="28%"/>
   <img style="vertical-align: top;" src="/example/resume.avif" width="28%"/>
-  <img style="vertical-align: top;"c src="/example/letter.avif" width="28%"/>
+  <img style="vertical-align: top;" src="/example/letter.avif" width="28%"/>
 </p>
 
 ## Requirements
