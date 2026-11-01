@@ -27,8 +27,8 @@ To use the template in an existing project, import it at the top of your file:
 ```typ
 #import "@preview/business-resume:2.1.0": *
 #show: business_template.with(
-  author: "Erica Ruggiero",           // PDF metadata
-  title: "Erica Ruggiero Résumé",     // PDF metadata
+  author: "Jane Doe",           // PDF metadata
+  title: "Jane Doe Résumé",     // PDF metadata
   paper: "a4",                        // default
   font: ("Minion 3", "Libertinus Serif"), // default
   size: 11pt,                         // default
@@ -41,12 +41,12 @@ All arguments are optional.
 
 ```typ
 #header(
-  name: "Erica Ruggiero",
+  name: "Jane Doe",
   avatar: image("photo.jpg"),
   mobile: "(413) 464-4238",
   location: "Cambridge, MA 01242",
-  email: "Erica.Ruggiero@sloan.mit.edu",
-  website: "https://linkedin.com/in/erikaruggiero",
+  email: "Jane.Doe@sloan.mit.edu",
+  website: "https://linkedin.com/in/janedoe",
 )
 ```
 

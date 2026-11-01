@@ -1,19 +1,19 @@
 #import "@preview/business-resume:2.1.0": *
 #show: business_template.with(
-  author: "Erica Ruggiero",
-  title: "Erica Ruggiero Cover letter",
+  author: "Jane Doe",
+  title: "Jane Doe Cover letter",
 )
 
 #set list(spacing: 1.3em)
 
 #header(
   small: true,
-  name: "Erica Ruggiero",
+  name: "Jane Doe",
   avatar: image("photo.jpg"),
   mobile: "(413) 464-4238",
   location: "Cambridge, MA 01242",
-  email: "Erica.Ruggiero@sloan.mit.edu",
-  website: "https://linkedin.com/in/erikaruggiero",
+  email: "Jane.Doe@sloan.mit.edu",
+  website: "https://linkedin.com/in/janedoe",
 )
 
 #v(10mm)
@@ -62,4 +62,4 @@ Sincerely,
 
 #image("signature.svg", width: 40mm)
 
-Erica Ruggiero
+Jane Doe
